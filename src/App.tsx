@@ -98,18 +98,18 @@ const App = () => {
         </View>
         <View style={styles.cameraContainer}>
           <ShapedPluginCamera
-            onImagesCaptured={values => {
-              setImages(values);
-              setSuccess(true);
-            }}
-            onErrorsImage={errors => {
-              setPoseErrors(errors);
-            }}
             onCountdown={countdown => {
               setCountdownValue(countdown);
             }}
             onDeviceLevel={setDeviceLevel}
             onChangeFrontalValidation={setFrontalValidation}
+            onImagesCaptured={values => {
+              setImages(values);
+              setSuccess(true);
+            }}
+            onErrorsPose={errors => {
+              setPoseErrors(errors);
+            }}
           />
         </View>
       </>
