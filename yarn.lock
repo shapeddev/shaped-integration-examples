@@ -1834,8 +1834,8 @@
 
 "@shapeddev/shaped-react-native-plugin@^0.0.1":
   version "0.0.1"
-  resolved "https://npm.pkg.github.com/download/@shapeddev/shaped-react-native-plugin/0.0.1/fa71822c236760081afd6b912b141a53ec3e5100#fa71822c236760081afd6b912b141a53ec3e5100"
-  integrity sha512-fUNqxzsVwiUC90eTedqwoT9wPMwbRR/cm5GjcK1lqhzhQ2c6JYOo0tnqCUrEdnpfpfUtVf86KUjek8jU22zMSQ==
+  resolved "https://npm.pkg.github.com/download/@shapeddev/shaped-react-native-plugin/0.0.1/0c5ecffb637906d77c9efea2707a8ca8a9f6f819#0c5ecffb637906d77c9efea2707a8ca8a9f6f819"
+  integrity sha512-elMykEiY0CfPBdYvs0RqzDhkfzN6UpzutveKtdzfMJ3KLA0iv3kpojZieeqHp5VChWLsmNBrSghyd6LXv1zjvg==
 
 "@shopify/react-native-skia@1.11.7":
   version "1.11.7"
