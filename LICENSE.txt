@@ -1,3 +1,38 @@
+**Licença Proprietária Shaped**  
+**Versão 1.0**  
+
+Copyright (C) [Ano] Shaped. Todos os Direitos Reservados.  
+
+Este software e todos os arquivos associados (o “Software”) são propriedade exclusiva da Shaped (“Empresa”). O Software é protegido por leis de direitos autorais e tratados internacionais.  
+
+### 1. Permissões  
+Os seguintes direitos são concedidos apenas a indivíduos ou entidades autorizadas explicitamente pela Shaped:  
+✔ **Uso Interno** – O Software pode ser utilizado apenas para fins internos dentro da Shaped.  
+✔ **Cópia de Segurança** – É permitida a criação de uma única cópia de segurança para fins de segurança.  
+
+### 2. Condições  
+Para utilizar o Software, as seguintes condições devem ser cumpridas:  
+⚠ **Confidencialidade** – Os usuários devem manter sigilo absoluto e não podem divulgar ou distribuir o Software.  
+⚠ **Proibição de Modificações** – Os usuários não podem alterar, modificar ou criar trabalhos derivados com base no Software.  
+⚠ **Proibição de Redistribuição** – O Software não pode ser compartilhado, vendido, licenciado ou distribuído sem o consentimento prévio e por escrito da Shaped.  
+
+### 3. Restrições  
+As seguintes ações são estritamente proibidas:  
+❌ **Proibição de Uso Comercial Externo** – O Software não pode ser utilizado para fins comerciais externos à Shaped.  
+❌ **Proibição de Engenharia Reversa** – Os usuários não podem descompilar, desmontar ou tentar acessar o código-fonte do Software.  
+❌ **Proibição de Acesso por Terceiros** – O Software não pode ser transferido, sublicenciado ou disponibilizado a terceiros.  
+
+### 4. Isenção de Garantia  
+🚨 O Software é fornecido "como está", sem qualquer garantia, expressa ou implícita.  
+A Shaped não se responsabiliza por quaisquer danos resultantes do uso ou da impossibilidade de uso do Software.  
+
+### 5. Rescisão  
+A violação de qualquer termo resulta na rescisão imediata dos direitos de uso do Software, e todas as cópias devem ser apagadas mediante solicitação.  
+
+Para dúvidas, entre em contato criando um issue neste repositório.
+
+---
+
 Shaped Proprietary License
 Version 1.0
 
