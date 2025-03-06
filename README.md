@@ -19,4 +19,4 @@ Se quiser contribuir com melhorias ou correções, sinta-se à vontade para abri
 
 ## Licença
 
-Este projeto está sob a licença MIT. Consulte o arquivo `LICENSE` para mais detalhes.
+Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](https://github.com/shapeddev/shaped-mobile-react-native/blob/main/LICENSE) para mais detalhes.
