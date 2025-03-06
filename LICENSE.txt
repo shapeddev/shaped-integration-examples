@@ -1,0 +1,32 @@
+Shaped Proprietary License
+Version 1.0
+
+Copyright (C) [Year] Shaped. All Rights Reserved.
+
+This software and all associated files (the “Software”) are the exclusive property of Shaped (“Company”). The Software is protected by copyright laws and international treaties.
+
+1. Permissions
+The following rights are granted only to authorized individuals or entities explicitly approved by Shaped:
+✔ Internal Use – The Software may be used only for internal purposes within Shaped.
+✔ Backup Copy – A single backup copy may be made for security purposes.
+
+2. Conditions
+The following conditions must be met to use the Software:
+⚠ Confidentiality – Users must maintain strict confidentiality and must not disclose or distribute the Software.
+⚠ No Modifications – Users may not alter, modify, or create derivative works based on the Software.
+⚠ No Redistribution – The Software must not be shared, sold, licensed, or otherwise distributed without prior written consent from Shaped.
+
+3. Limitations
+The following actions are strictly prohibited:
+❌ No Commercial Use Outside Shaped – The Software cannot be used for external commercial purposes.
+❌ No Reverse Engineering – Users must not decompile, disassemble, or attempt to access the Software's source code.
+❌ No Third-Party Access – The Software must not be transferred, sublicensed, or made available to any third party.
+
+4. Disclaimer of Warranty
+🚨 The Software is provided "as is", without any warranties, express or implied.
+Shaped is not liable for any damages resulting from the use or inability to use the Software.
+
+5. Termination
+Violation of any terms immediately terminates the User’s rights to the Software, and all copies must be deleted upon request.
+
+For inquiries, contact by creating an issue in this repository
