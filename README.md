@@ -17,6 +17,6 @@ No código do exemplo, você encontrará implementações demonstrando como util
 
 Se quiser contribuir com melhorias ou correções, sinta-se à vontade para abrir um **Pull Request** ou relatar problemas na seção de **Issues**.
 
-## Licença
+## 📄 License
 
-Este projeto está sob a licença MIT. Consulte o arquivo [LICENSE](https://github.com/shapeddev/shaped-mobile-react-native/blob/main/LICENSE) para mais detalhes.
+Consulte o arquivo [LICENSE](https://github.com/shapeddev/shaped-mobile-react-native/blob/main/LICENSE) para mais detalhes.
