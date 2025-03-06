@@ -58,18 +58,18 @@ const App = () => {
           pagingEnabled
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={styles.imageScrollContainer}>
-          {images?.frontalImage?.base64 && (
+          {images?.frontalImage?.uri && (
             <Image
               source={{
-                uri: `data:image/png;base64,${images.frontalImage.base64}`,
+                uri: images.frontalImage.uri,
               }}
               style={styles.image}
             />
           )}
-          {images?.sideImage?.base64 && (
+          {images?.sideImage?.uri && (
             <Image
               source={{
-                uri: `data:image/png;base64,${images.sideImage.base64}`,
+                uri: images.sideImage.uri,
               }}
               style={styles.image}
             />
@@ -98,16 +98,18 @@ const App = () => {
         </View>
         <View style={styles.cameraContainer}>
           <ShapedPluginCamera
-            onImagesCaptured={values => {
-              setImages(values);
-              setSuccess(true);
-            }}
-            onErrorsImage={(errors, countdown) => {
-              setPoseErrors(errors);
+            onCountdown={countdown => {
               setCountdownValue(countdown);
             }}
             onDeviceLevel={setDeviceLevel}
             onChangeFrontalValidation={setFrontalValidation}
+            onImagesCaptured={values => {
+              setImages(values);
+              setSuccess(true);
+            }}
+            onErrorsPose={errors => {
+              setPoseErrors(errors);
+            }}
           />
         </View>
       </>
