@@ -1,4 +1,4 @@
-# Integração com o Shaped Plugin no React Native
+# Integração: Shaped Plugin - React Native
 
 Este repositório tem como objetivo apresentar um app de exemplo que utiliza o **Shaped Plugin** em um ambiente **React Native**. O projeto demonstra os principais pontos de integração entre o **React Native** e o **Shaped Plugin**, facilitando a incorporação do plugin em suas aplicações.
 
