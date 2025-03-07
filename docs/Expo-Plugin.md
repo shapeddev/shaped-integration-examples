@@ -86,7 +86,7 @@ Adicione:
 
 ```gradle
 maven {
-    url "https://maven.pkg.github.com/shapeddev/shaped_sdk"
+    url "https://maven.pkg.github.com/shapeddev/shaped-sdk-packages"
     credentials {
         username = githubUser
         password = githubToken
