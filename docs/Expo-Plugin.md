@@ -34,7 +34,7 @@ OBS: Se acontecer algum erro referente ao react-native-reanimated seja o [manual
 
 ### 2. Instalar o expo-dev-client
 
-Para testar o app em um dispositivo físico sem precisar de um build oficial, instale o **expo-dev-client**:
+Para utilizar o pacote é preciso que seu app utilize o [development build](https://docs.expo.dev/develop/development-builds/create-a-build/) para isso instale o **expo-dev-client**:
 
 ```sh
 npx expo install expo-dev-client
