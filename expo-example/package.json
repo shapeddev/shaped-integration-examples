@@ -9,7 +9,7 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@shapeddev/shaped-expo-plugin": "^0.0.1",
+    "@shapeddev/shaped-expo-plugin": "0.0.2",
     "@shopify/react-native-skia": "1.5.0",
     "expo": "~52.0.37",
     "expo-dev-client": "~5.0.12",
