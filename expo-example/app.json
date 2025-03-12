@@ -14,14 +14,14 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.negritoprogramador.expoexample"
+      "bundleIdentifier": "com.shaped.expoexample"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.negritoprogramador.expoexample"
+      "package": "com.shaped.expoexample"
     },
     "web": {
       "favicon": "./assets/favicon.png"

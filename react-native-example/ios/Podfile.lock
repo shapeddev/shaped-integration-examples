@@ -1662,7 +1662,7 @@ PODS:
     - GoogleMLKit/PoseDetection (= 6.0.0)
     - GoogleMLKit/PoseDetectionAccurate (= 6.0.0)
     - GoogleMLKit/SegmentationSelfie (= 6.0.0)
-  - ShapedReactNativePlugin (0.0.1):
+  - ShapedReactNativePlugin (0.0.2):
     - DoubleConversion
     - glog
     - GoogleMLKit/PoseDetection (= 6.0.0)
@@ -2016,8 +2016,8 @@ SPEC CHECKSUMS:
   ReactCodegen: d9a09a7f7eee93f54d0b4135d5ca66b31b0c42a5
   ReactCommon: 08f4808f02ff115884e870e5cfea689703ff759a
   RNSVG: 877cd57c2db63dc9f1fd1bbb5e95506ccd481df6
-  shaped_sdk: a99d5cf29e77e5706cb175000af4f14900c15920
-  ShapedReactNativePlugin: a3891f213c7219993d749a92fde0ce10cd936188
+  shaped_sdk: 8af077f4d10ad94280a75fafc8f87336713987e0
+  ShapedReactNativePlugin: 7f56f9f30209487a08360b43dbb75163bd2ad673
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 1fd059161b449018342943b095a6d4e69bcaa719
 

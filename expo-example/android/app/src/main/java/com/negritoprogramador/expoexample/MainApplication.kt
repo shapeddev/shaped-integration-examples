@@ -1,4 +1,4 @@
-package com.negritoprogramador.expoexample
+package com.shaped.expoexample
 
 import android.app.Application
 import android.content.res.Configuration
