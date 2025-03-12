@@ -1,4 +1,4 @@
-package com.negritoprogramador.expoexample
+package com.shaped.expoexample
 
 import android.os.Build
 import android.os.Bundle
