@@ -1565,7 +1565,7 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
-  - react-native-skia (1.5.0):
+  - react-native-skia (1.11.7):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1989,7 +1989,7 @@ PODS:
     - GoogleMLKit/PoseDetection (= 6.0.0)
     - GoogleMLKit/PoseDetectionAccurate (= 6.0.0)
     - GoogleMLKit/SegmentationSelfie (= 6.0.0)
-  - ShapedExpoPlugin (0.0.2):
+  - ShapedExpoPlugin (0.0.3):
     - ExpoModulesCore
     - GoogleMLKit/PoseDetection (= 6.0.0)
     - GoogleMLKit/PoseDetectionAccurate (= 6.0.0)
@@ -2348,7 +2348,7 @@ SPEC CHECKSUMS:
   React-logger: 5cad0c76d056809523289e589309012215a393b5
   React-Mapbuffer: a381120aea722d2244d4e4b663a10d4c3b2d4e51
   React-microtasksnativemodule: d9b946675010659cddd1c7611c074216579c8ad3
-  react-native-skia: cbbfcf86f1726ee53239d4b9e7177019045f0bc1
+  react-native-skia: 2458797f341ae44bf8df3e933578ae688d225220
   React-nativeconfig: 67fa7a63ea288cb5b1d0dd2deaf240405fec164f
   React-NativeModulesApple: 34b7a4d7441a4ee78d18109ff107c1ccf7c074a9
   React-perflogger: d1149037ac466ad2141d4ae541ca16cb73b2343b
@@ -2379,7 +2379,7 @@ SPEC CHECKSUMS:
   RNReanimated: a2692304a6568bc656c04c8ffea812887d37436e
   RNSVG: 030717ff82ea8f2117347c2fcf52a2d1eafba9ba
   shaped_sdk: 8af077f4d10ad94280a75fafc8f87336713987e0
-  ShapedExpoPlugin: faf297176a5ae4122859701966125e4448c49ec3
+  ShapedExpoPlugin: ec03216c655a22247fbd38aa3361b6f002cdbbbe
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 90d80701b27946c4b23461c00a7207f300a6ff71
   ZXingObjC: 8898711ab495761b2dbbdec76d90164a6d7e14c5
