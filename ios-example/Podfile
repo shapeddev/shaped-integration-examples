@@ -1,0 +1,14 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '17.0'
+source 'https://cdn.cocoapods.org/'
+source 'https://github.com/shapeddev/shaped-sdk-ios-specs.git'
+
+target 'ShapedExample' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for Shaped
+  pod 'ShapedPluginCamera', :path => File.expand_path('../../shaped_app/modules/shaped_sdk/ios/shaped_plugin_dev.podspec', __dir__)
+  pod 'shaped_sdk', :path => File.expand_path('../../shaped_app/modules/shaped_sdk/sdk/ios/shaped_sdk_dev.podspec', __dir__)
+
+end
