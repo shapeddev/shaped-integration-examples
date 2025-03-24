@@ -10,20 +10,59 @@ import ShapedPluginCamera
 
 struct ContentView: View {
         
-    var body: some View {
-        let _ = print(ShapedPluginCamera().onErrorsPose)
+    @ObservedObject
+    var shapedPlugin: ShapedPluginCamera
 
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-            Text(ShapedPluginCamera().onErrorsPose.first ?? "")
+    var body: some View {
+        VStack(alignment: .leading) {
+            HStack {
+                
+                Button {
+                    shapedPlugin.startPoseSound()
+                } label: {
+                    Text("Start Sound")
+                }
+                
+                Spacer()
+                
+                Button {
+                    shapedPlugin.stopPoseSound()
+                } label: {
+                    Text("Stop Sound")
+                }
+                
+                Spacer()
+            }
+            .frame(height: 20)
+            
+            HStack {
+                if let onErrorsPose = shapedPlugin.onErrorsPose {
+                    let errors = onErrorsPose.first
+                    Text("Error: \(errors ?? "")")
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.5)
+                        .font(.system(size: 60))
+                        .frame(height: 20)
+                }
+            }
+            .frame(height: 20)
+
+            HStack {
+                shapedPlugin.cameraView()
+            }
+            .frame(alignment: .center)
         }
+        .frame(
+            minWidth: 0,
+            maxWidth: .infinity,
+            minHeight: 0,
+            maxHeight: .infinity,
+            alignment: .topLeading
+        )
         .padding()
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(shapedPlugin: ShapedPluginCamera())
 }

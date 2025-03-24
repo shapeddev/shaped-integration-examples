@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import ShapedPluginCamera
 
 @main
 struct ShapedExampleApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(shapedPlugin: ShapedPluginCamera())
         }
     }
 }
