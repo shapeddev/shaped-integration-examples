@@ -25,6 +25,17 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      [
+        "@shapeddev/shaped-expo-plugin",
+        {
+          "gitUsernameEnvName": "GITHUB_USER",
+          "gitTokenEnvName": "GITHUB_TOKEN",
+          "gitUsername": "",
+          "gitToken": ""
+        }
+      ]
+    ]
   }
 }
