@@ -17,6 +17,7 @@
 /* Begin PBXFileReference section */
 		1690B965029C964591FCB294 /* Pods_ShapedExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShapedExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		219608FC0E98689CB56C2261 /* Pods-ShapedExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShapedExample.release.xcconfig"; path = "Target Support Files/Pods-ShapedExample/Pods-ShapedExample.release.xcconfig"; sourceTree = "<group>"; };
+		503020BA2D909C7400648830 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		5042BB112D8B487B00EE3510 /* ShapedExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShapedExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		50CC82CD2D8B4B36009C97A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		50CC82CE2D8B4B36009C97A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +67,7 @@
 		5042BB132D8B487B00EE3510 /* ShapedExample */ = {
 			isa = PBXGroup;
 			children = (
+				503020BA2D909C7400648830 /* Info.plist */,
 				50CC82CD2D8B4B36009C97A0 /* Assets.xcassets */,
 				50CC82CE2D8B4B36009C97A0 /* ContentView.swift */,
 				50CC82D02D8B4B36009C97A0 /* Preview Content */,
@@ -366,6 +368,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShapedExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -400,6 +403,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ShapedExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
