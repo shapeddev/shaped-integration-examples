@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@dr.pogodin/react-native-fs": "^2.32.0",
-    "@shapeddev/shaped-react-native-plugin": "0.0.3",
+    "@shapeddev/shaped-react-native-plugin": "0.0.4",
     "@shopify/react-native-skia": "1.11.7",
     "react": "18.3.1",
     "react-native": "0.77.1",

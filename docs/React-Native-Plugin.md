@@ -46,6 +46,9 @@ No início do seu `Podfile`, adicione estas linhas para garantir que o pacote se
 
 ```ruby
 source 'https://cdn.cocoapods.org/'
+# Se for usar o emulador use esse
+source 'https://github.com/shapeddev/shaped-sdk-ios-specs-emulator.git'
+# Senão esse
 source 'https://github.com/shapeddev/shaped-sdk-ios-specs.git'
 ```
 
@@ -78,7 +81,7 @@ O **Shaped React Native Plugin** foi desenvolvido para ser compatível com a **N
 - **Versão recomendada do React Native:** [`0.77.1`](https://www.npmjs.com/package/react-native/v/0.77.1)
 - **Versão recomendada do React:** [`18.3.1`](https://www.npmjs.com/package/react-native/v/18.3.1)
 - **Versão mínima do Android SDK:** `API 24 (Android 7.0 Nougat)`
-- **Versão mínima do iOS:** `13.0`
+- **Versão mínima do iOS:** `15.5`
 
 ## Dependências Adicionais
 
