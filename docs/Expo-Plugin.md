@@ -40,63 +40,76 @@ Para utilizar o pacote é preciso que seu app utilize o [development build](http
 npx expo install expo-dev-client
 ```
 
-### 3. Configuração no Android
+### 3. Configuração do Plugin no `app.json`
 
-No arquivo `android/local.properties`, adicione suas credenciais do GitHub para garantir que as dependências privadas sejam resolvidas corretamente. Isso deve ser feito localmente. Para gerar o build do seu app corretamente via GitHub Actions, configure as mesmas credenciais como **secrets** no seu pipeline CI/CD. Essas credenciais serão fornecidas pelo administrador do sistema:
+Para que o plugin funcione corretamente no Android e iOS, adicione as configurações abaixo no seu `app.json` ou `app.config.js`:
 
-```properties
-GITHUB_USER=seu_usuario
-GITHUB_TOKEN=seu_token
-```
-
-### 4. Configuração no iOS
-
-No início do seu `Podfile`, adicione estas linhas para garantir que o pacote seja resolvido corretamente:
-
-```ruby
-source 'https://cdn.cocoapods.org/'
-source 'https://github.com/shapeddev/shaped-sdk-ios-specs.git'
-```
-
-### 5. Configuração do build.gradle
-
-No arquivo `android/build.gradle`, adicione as seguintes linhas **abaixo** da linha contendo:
-
-```gradle
-allprojects {}
-```
-
-Adicione:
-
-```gradle
-def localProperties = new Properties()
-localProperties.load(rootProject.file("local.properties").newDataInputStream())
-
-def githubUser = System.getenv("GITHUB_USER") ?: localProperties.getProperty("GITHUB_USER")
-def githubToken = System.getenv("GITHUB_TOKEN") ?: localProperties.getProperty("GITHUB_TOKEN")
-```
-
-Em seguida, dentro da seção `allprojects`, logo abaixo da linha contendo:
-
-```gradle
-maven { url 'https://www.jitpack.io' }
-```
-
-Adicione:
-
-```gradle
-maven {
-    url "https://maven.pkg.github.com/shapeddev/shaped-sdk-packages"
-    credentials {
-        username = githubUser
-        password = githubToken
-    }
+```json
+{
+  "expo": {
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "15.5"
+          }
+        }
+      ],
+      [
+        "@shapeddev/shaped-expo-plugin",
+        {
+          "gitUsernameEnvName": "GITHUB_USER",
+          "gitTokenEnvName": "GITHUB_TOKEN",
+          "gitUsername": "SEU_USERNAME",
+          "gitToken": "SEU_TOKEN",
+          "useSimulator": false
+        }
+      ]
+    ]
+  }
 }
 ```
 
-Essa configuração garante que, localmente, as variáveis sejam carregadas a partir do `local.properties`, enquanto no ambiente de CI/CD, as credenciais sejam lidas diretamente das variáveis de ambiente configuradas.
+> ℹ️ **Importante:** A ordem dos plugins importa. `expo-build-properties` deve vir **antes** para garantir que a versão mínima do iOS seja aplicada corretamente antes da instalação dos pods.
 
-### 6. Permissões no Android
+#### Uso do plugin no Emulador IOS
+
+⚠️ O pacote não oferece suporte completo para emuladores iOS por conta das dependências nativas utilizadas. Entretanto, é possível **ativar um modo de simulação (mock)** para que o plugin funcione no emulador sem causar erros de build. Para isso, é necessário configurar a variável `useSimulator` como `true` no seu `app.json` ou `app.config.js`:
+
+```json
+{
+  "expo": {
+    "plugins": [
+      [
+        "@shapeddev/shaped-expo-plugin",
+        {
+          "useSimulator": true
+        }
+      ]
+    ]
+  }
+}
+```
+
+> ℹ️ Essa flag fará com que o plugin utilize uma versão da SDK sem ML Kit e retorne dados simulados no lugar dos dados reais de câmera e detecção de pose.
+
+#### 🔐 Acesso aos pacotes privados do GitHub (Android)
+
+Para que o Android consiga acessar os pacotes hospedados no GitHub Packages, é necessário fornecer as credenciais de acesso via variáveis de ambiente ou diretamente no `app.json` ou `app.config.js`, conforme explicado acima, além disso a versão mínima do IOS é a **15.5** igual especificamos no `app.json` de exemplo.
+
+- `gitUsernameEnvName` e `gitTokenEnvName` informam o nome das variáveis de ambiente utilizadas durante o build (por exemplo, no EAS Build).
+- `gitUsername` e `gitToken` são utilizados para se autenticar nos repositorios privados dos pacotes do nosso plugin.
+
+Essas credenciais são usadas para configurar o repositório Maven privado no `build.gradle` do Android.
+
+**Para o IOS é preciso exportar a variável `GITHUB_TOKEN`, com o mesmo token que usou acima.**
+
+**Lembrar sempres que alterar algo no `app.json` ou `app.config.js` é preciso rodar o `npx expo prebuild --clean`**
+
+---
+
+### 4. Permissões no Android
 
 Se ocorrer erro de permissão da câmera no Android, adicione a seguinte permissão no arquivo `AndroidManifest.xml`:
 
@@ -104,7 +117,7 @@ Se ocorrer erro de permissão da câmera no Android, adicione a seguinte permiss
 <uses-permission android:name="android.permission.CAMERA"/>
 ```
 
-### 7. Permissões no iOS
+### 5. Permissões no iOS
 
 Para utilizar a câmera no iOS, adicione a seguinte chave no arquivo `Info.plist`:
 
@@ -113,7 +126,7 @@ Para utilizar a câmera no iOS, adicione a seguinte chave no arquivo `Info.plist
 <string>Este aplicativo requer acesso à câmera para capturar imagens.</string>
 ```
 
-### 8. Configuração do `.npmrc`
+### 6. Configuração do `.npmrc`
 
 Caso tenha problemas ao baixar o pacote, adicione um arquivo `.npmrc` na raiz do projeto:
 

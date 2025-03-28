@@ -33,7 +33,8 @@
           "gitUsernameEnvName": "GITHUB_USER",
           "gitTokenEnvName": "GITHUB_TOKEN",
           "gitUsername": "",
-          "gitToken": ""
+          "gitToken": "",
+          "useSimulator": true
         }
       ]
     ]
