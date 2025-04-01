@@ -1,7 +1,7 @@
 PODS:
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
-  - dr-pogodin-react-native-fs (2.32.0):
+  - dr-pogodin-react-native-fs (2.32.1):
     - DoubleConversion
     - glog
     - hermes-engine
@@ -1662,12 +1662,9 @@ PODS:
     - GoogleMLKit/PoseDetection (= 6.0.0)
     - GoogleMLKit/PoseDetectionAccurate (= 6.0.0)
     - GoogleMLKit/SegmentationSelfie (= 6.0.0)
-  - ShapedReactNativePlugin (0.0.2):
+  - ShapedReactNativePlugin (0.0.5):
     - DoubleConversion
     - glog
-    - GoogleMLKit/PoseDetection (= 6.0.0)
-    - GoogleMLKit/PoseDetectionAccurate (= 6.0.0)
-    - GoogleMLKit/SegmentationSelfie (= 6.0.0)
     - hermes-engine
     - RCT-Folly (= 2024.11.18.00)
     - RCTRequired
@@ -1933,7 +1930,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: 7e761d76ca2ce687f7cc98e698152abd03a18f90
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
-  dr-pogodin-react-native-fs: e30902ba24b190809d314b0267c32e46dfb20401
+  dr-pogodin-react-native-fs: a11edd176df02a1091fd7004317a2349cbe6ad63
   fast_float: 06eeec4fe712a76acc9376682e4808b05ce978b6
   FBLazyVector: 79c4b7ec726447eec5f8593379466bd9fde1aa14
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
@@ -2016,11 +2013,11 @@ SPEC CHECKSUMS:
   ReactCodegen: d9a09a7f7eee93f54d0b4135d5ca66b31b0c42a5
   ReactCommon: 08f4808f02ff115884e870e5cfea689703ff759a
   RNSVG: 877cd57c2db63dc9f1fd1bbb5e95506ccd481df6
-  shaped_sdk: 8af077f4d10ad94280a75fafc8f87336713987e0
-  ShapedReactNativePlugin: 7f56f9f30209487a08360b43dbb75163bd2ad673
+  shaped_sdk: 42bce31d126c6ca044a0df89fa1fd52ebe62941e
+  ShapedReactNativePlugin: b8ba66d5f45d79e0c880aba566e8c7d18760adc6
   SocketRocket: d4aabe649be1e368d1318fdf28a022d714d65748
   Yoga: 1fd059161b449018342943b095a6d4e69bcaa719
 
-PODFILE CHECKSUM: 92ee4342732b8bb2b487108878e837b42737c2a4
+PODFILE CHECKSUM: 83e35e6fef842eee42c16cc9ae7ed5bbab346df4
 
 COCOAPODS: 1.16.2

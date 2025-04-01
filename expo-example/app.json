@@ -28,6 +28,14 @@
     },
     "plugins": [
       [
+        "expo-build-properties",
+        {
+          "ios": {
+            "deploymentTarget": "15.5"
+          }
+        }
+      ],
+      [
         "@shapeddev/shaped-expo-plugin",
         {
           "gitUsernameEnvName": "GITHUB_USER",
