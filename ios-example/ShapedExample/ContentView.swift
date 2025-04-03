@@ -130,6 +130,10 @@ struct ContentView: View {
             alignment: .topLeading
         )
         .padding()
+        .onAppear() {
+            shapedPlugin.setAudioPath(path: "customSound")
+            shapedPlugin.copyAudioToPath(path: "customSound", fromBundle: "CustomSounds", fromAudioName: "audio_file", toAudioName: "face_not_detected_sound")
+        }
     }
 }
 

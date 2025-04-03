@@ -11,6 +11,7 @@
 		50CC82D32D8B4B36009C97A0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 50CC82CF2D8B4B36009C97A0 /* Preview Assets.xcassets */; };
 		50CC82D42D8B4B36009C97A0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC82CE2D8B4B36009C97A0 /* ContentView.swift */; };
 		50CC82D52D8B4B36009C97A0 /* ShapedExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CC82D12D8B4B36009C97A0 /* ShapedExampleApp.swift */; };
+		50FABAEA2D9D5F9F00A125A1 /* CustomSounds.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 50FABAE92D9D5F9F00A125A1 /* CustomSounds.bundle */; };
 		C2B1DAFB195BDE107B4095FF /* Pods_ShapedExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1690B965029C964591FCB294 /* Pods_ShapedExample.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		50CC82CE2D8B4B36009C97A0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		50CC82CF2D8B4B36009C97A0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		50CC82D12D8B4B36009C97A0 /* ShapedExampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapedExampleApp.swift; sourceTree = "<group>"; };
+		50FABAE92D9D5F9F00A125A1 /* CustomSounds.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CustomSounds.bundle; sourceTree = "<group>"; };
 		E98B72F9071A7B78112C7201 /* Pods-ShapedExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShapedExample.debug.xcconfig"; path = "Target Support Files/Pods-ShapedExample/Pods-ShapedExample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,6 +69,7 @@
 		5042BB132D8B487B00EE3510 /* ShapedExample */ = {
 			isa = PBXGroup;
 			children = (
+				50FABAE92D9D5F9F00A125A1 /* CustomSounds.bundle */,
 				503020BA2D909C7400648830 /* Info.plist */,
 				50CC82CD2D8B4B36009C97A0 /* Assets.xcassets */,
 				50CC82CE2D8B4B36009C97A0 /* ContentView.swift */,
@@ -156,6 +159,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50FABAEA2D9D5F9F00A125A1 /* CustomSounds.bundle in Resources */,
 				50CC82D22D8B4B36009C97A0 /* Assets.xcassets in Resources */,
 				50CC82D32D8B4B36009C97A0 /* Preview Assets.xcassets in Resources */,
 			);
