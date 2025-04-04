@@ -132,7 +132,7 @@ struct ContentView: View {
         .padding()
         .onAppear() {
             shapedPlugin.setAudioPath(path: "customSound")
-            shapedPlugin.copyAudioToPath(path: "customSound", fromBundle: "CustomSounds", fromAudioName: "audio_file", toAudioName: "face_not_detected_sound")
+            shapedPlugin.copyAudioToPath(path: "customSound", fromBundle: "CustomSounds", fromAudioName: "audio_file", toAudioName: .face_not_detected_sound)
         }
     }
 }
