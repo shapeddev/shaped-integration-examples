@@ -1,0 +1,45 @@
+name: ShapedSDKiOSPodfile
+
+permissions:
+  contents: write
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  
+  ShapedSDKiOSPodfile:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y-%m-%d-%H-%M-%S')"
+
+      - name: Copying new Podfile
+        working-directory: ./
+        run: |
+          cp native/plugin/ios/Podfile_new/Podfile native/plugin/ios/Podfile
+
+      - name: Create branch with update
+        working-directory: ./
+        run: |
+          git config user.name "Shaped"
+          git config user.email "contato@shaped.com.br"
+          git checkout -b Update-${{ steps.date.outputs.date }}
+          git add .
+          git commit -a -m "Update Podfile SDK version ${{ steps.date.outputs.date }}"
+          git push origin Update-${{ steps.date.outputs.date }}
+
+      - name: Create pull request
+        run: gh pr create -B main -H Update-${{ steps.date.outputs.date }} --title 'Update Podfile SDK version' --body 'Update Podfile SDK version ${{ steps.date.outputs.date }}'
+        env:
+            GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+
+
+
