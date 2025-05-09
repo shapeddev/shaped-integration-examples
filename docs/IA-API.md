@@ -15,3 +15,16 @@ Quando configurado, a API de IA do Shaped enviará os dados processados para o e
 - **`measurement`**: Contém os dados da avaliação estruturados em formato JSON, permitindo integração mais flexível e estruturada com outros sistemas.  
 
 A escolha entre os formatos `content` e `measurement` permite que diferentes plataformas integrem a API de acordo com suas necessidades específicas.  
+
+### Explicação dos campos usados
+A tabela abaixo apresenta um conjunto de variáveis utilizadas para avaliação da composição corporal e da distribuição de gordura em indivíduos. Neste caso, utilizamos a tabela para explicar o que representa cada campo retornado pela nossa API, facilitando a interpretação dos dados gerados automaticamente a partir de medições corporais.
+| **Descrição**             | **Variável**          |
+| ------------------------- | --------------------- |
+| Índice de conicidade      | `ic_index`            |
+| Razão Cintura-Quadril     | `waist_hip`           |
+| Razão Cintura-Estatura    | `waist_height`        |
+| Circunferência do quadril | `hip`                 |
+| Circunferência da cintura | `waist`               |
+| Fat Mass Index - FMI      | `fat_mass_index_bia`  |
+| Lean Mass Index - LMI     | `lean_mass_index_bia` |
+| Percentual de gordura     | `bia`                 |
