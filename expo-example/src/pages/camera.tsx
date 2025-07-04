@@ -1,26 +1,18 @@
 import { useState } from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  SafeAreaView,
-  ScrollView,
-  Image,
-} from "react-native";
+import { View, Text, StyleSheet, SafeAreaView } from "react-native";
 import { ShapedPluginCamera } from "@shapeddev/shaped-expo-plugin";
-import type {
-  DeviceLevel,
-  ImagesCaptured,
-} from "@shapeddev/shaped-expo-plugin";
+import type { DeviceLevel } from "@shapeddev/shaped-expo-plugin";
 import LevelChart from "../components/LevelChart";
+import { useNavigation } from "@react-navigation/native";
+import { RootStackProp } from "../router";
 
 const Camera = () => {
-  const [images, setImages] = useState<ImagesCaptured | undefined>();
   const [poseErrors, setPoseErrors] = useState<string[]>([]);
   const [countdownValue, setCountdownValue] = useState<number | null>();
   const [deviceLevel, setDeviceLevel] = useState<DeviceLevel | undefined>();
   const [frontalValidation, setFrontalValidation] = useState(true);
-  const [success, setSuccess] = useState(false);
+
+  const navigation = useNavigation<RootStackProp>();
 
   const errorMessages: Record<string, string> = {
     faceNotDetected: "Caminhe para trás, enquadrando o corpo inteiro",
@@ -51,34 +43,6 @@ const Camera = () => {
   };
 
   const renderContent = () => {
-    if (success) {
-      return (
-        <ScrollView
-          horizontal
-          pagingEnabled
-          showsHorizontalScrollIndicator={false}
-          contentContainerStyle={styles.imageScrollContainer}
-        >
-          {images?.frontalImage?.uri && (
-            <Image
-              source={{
-                uri: images.frontalImage.uri,
-              }}
-              style={styles.image}
-            />
-          )}
-          {images?.sideImage?.uri && (
-            <Image
-              source={{
-                uri: images.sideImage.uri,
-              }}
-              style={styles.image}
-            />
-          )}
-        </ScrollView>
-      );
-    }
-
     return (
       <>
         <LevelChart
@@ -105,8 +69,9 @@ const Camera = () => {
             onDeviceLevel={setDeviceLevel}
             onChangeFrontalValidation={setFrontalValidation}
             onImagesCaptured={(values) => {
-              setImages(values);
-              setSuccess(true);
+              navigation.replace("Images", {
+                images: values,
+              });
             }}
             onErrorsPose={(errors) => {
               setPoseErrors(errors);
