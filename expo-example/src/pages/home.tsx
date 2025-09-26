@@ -2,11 +2,13 @@ import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from "react-native";
 import { RootStackParamList } from "../router";
+import { useTranslation } from "react-i18next";
 
 type NavigationProps = NativeStackNavigationProp<RootStackParamList, "Home">;
 
 export function Home() {
   const navigation = useNavigation<NavigationProps>();
+  const { t } = useTranslation();
 
   const onNavigateCamera = () => {
     navigation.navigate("Camera");
@@ -14,11 +16,9 @@ export function Home() {
 
   return (
     <SafeAreaView style={styles.safeContainer}>
-      <Text style={styles.title}>
-        Aplicativo de exemplo da utilização do componente ShapedPluginCamera
-      </Text>
+      <Text style={styles.title}>{t("home.title")}</Text>
       <TouchableOpacity style={styles.button} onPress={onNavigateCamera}>
-        <Text style={styles.buttonText}>Começar</Text>
+        <Text style={styles.buttonText}>{t("home.buttonStart")}</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

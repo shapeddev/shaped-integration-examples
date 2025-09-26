@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { View, StyleSheet, Dimensions, Text } from 'react-native';
-import Svg, { Defs, LinearGradient, Stop, Polygon } from 'react-native-svg';
+import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { View, StyleSheet, Dimensions, Text } from "react-native";
+import Svg, { Defs, LinearGradient, Stop, Polygon } from "react-native-svg";
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 
 type LevelChartProps = {
   offsetX?: number;
@@ -15,14 +16,15 @@ const LevelChart: React.FC<LevelChartProps> = ({
   offsetY = 0,
   isValid = false,
 }) => {
+  const { t } = useTranslation();
   const graphHeight = 75;
   const [animatedWaterLevel, setAnimatedWaterLevel] = useState({
     left: graphHeight / 2,
     right: graphHeight / 2,
   });
 
-  const gradientStart = isValid ? '#66E66D' : '#FF6F61';
-  const gradientEnd = isValid ? '#157A1F' : '#B32121';
+  const gradientStart = isValid ? "#66E66D" : "#FF6F61";
+  const gradientEnd = isValid ? "#157A1F" : "#B32121";
 
   const clampedOffsetX = Math.max(-50, Math.min(50, offsetX));
   const clampedOffsetY = Math.max(-30, Math.min(30, offsetY));
@@ -67,8 +69,8 @@ const LevelChart: React.FC<LevelChartProps> = ({
         />
       </Svg>
 
-      <Text style={[styles.text, { color: isValid ? '#157A1F' : '#B32121' }]}>
-        {isValid ? 'Nível válido' : 'Nível inválido'}
+      <Text style={[styles.text, { color: isValid ? "#157A1F" : "#B32121" }]}>
+        {isValid ? t("camera.levelValid") : t("camera.levelInvalid")}
       </Text>
     </View>
   );
@@ -76,17 +78,18 @@ const LevelChart: React.FC<LevelChartProps> = ({
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     padding: 10,
-    position: 'relative',
+    position: "relative",
   },
   text: {
-    position: 'absolute',
-    top: '40%',
+    position: "absolute",
+    top: "40%",
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
 });
 
 export default LevelChart;
+
