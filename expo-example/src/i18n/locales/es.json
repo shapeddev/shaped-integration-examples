@@ -1,0 +1,31 @@
+{
+    "home": {
+        "title": "Aplicación de ejemplo utilizando el componente ShapedPluginCamera",
+        "buttonStart": "Empezar"
+    },
+    "camera": {
+        "poseFront": "Pose Frontal",
+        "poseSide": "Pose Lateral",
+        "levelValid": "Nivel válido",
+        "levelInvalid": "Nivel inválido",
+        "errors": {
+            "faceNotDetected": "Retrocede para encuadrar todo tu cuerpo",
+            "leftHandNotDetected": "La mano izquierda no aparece en la imagen",
+            "rightHandNotDetected": "La mano derecha no aparece en la imagen",
+            "leftFootNotDetected": "El pie izquierdo no aparece en la imagen",
+            "rightFootNotDetected": "El pie derecho no aparece en la imagen",
+            "angleNotDetected": "Ajusta tu postura",
+            "armsBelow": "Levanta los brazos",
+            "armsTop": "Baja los brazos",
+            "legsOpen": "Junta las piernas",
+            "legsClosed": "Separa las piernas",
+            "rightArmTop": "Baja el brazo derecho",
+            "rightArmBelow": "Levanta el brazo derecho",
+            "leftArmTop": "Baja el brazo izquierdo",
+            "leftArmBelow": "Levanta el brazo izquierdo",
+            "verifyVolumeSetting": "Por favor verifica el volumen del dispositivo",
+            "personIsFar": "Acércate a la cámara",
+            "deviceLevelInvalid": "Ajusta el ángulo de tu dispositivo"
+        }
+    }
+}
