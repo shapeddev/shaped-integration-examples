@@ -6,6 +6,7 @@ import { Home } from "./pages/home";
 import Camera from "./pages/camera";
 import Images from "./pages/images";
 import { ImagesCaptured } from "@shapeddev/shaped-expo-plugin";
+import HeaderWithLanguageMenu from "./components/HeaderWithLanguageMenu";
 
 export type RootStackParamList = {
   Home: any;
@@ -26,13 +27,7 @@ export function RootStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerStyle: {
-          backgroundColor: "rgba(62, 65, 82, 1)",
-        },
-        headerTintColor: "#A5B9C4",
-        headerTitleStyle: {
-          fontWeight: "bold",
-        },
+        header: (props) => <HeaderWithLanguageMenu {...props} />,
       }}
     >
       <Stack.Screen name="Home" component={Home} />

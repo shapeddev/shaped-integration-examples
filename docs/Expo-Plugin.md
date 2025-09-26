@@ -194,14 +194,15 @@ export default App;
 
 ## Propriedades (Props) do `ShapedPluginCamera`
 
-| Propriedade                     | Tipo                                   | Descrição                                                                                               |
-| ------------------------------- | -------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| **`onImagesCaptured`**          | `(images?: ImagesCaptured) => void`    | Callback chamado quando imagens são capturadas. Essas são as imagens que devem ser enviadas para a API. |
-| **`onErrorsPose`**              | `(errors: string[]) => void`           | Callback chamado quando erros ocorrem durante a captura da pose.                                        |
-| **`onCountdown`**               | `(countdown: number \| null) => void`  | Callback chamado quando é iniciado o countdown para a captura da imagem.                                |
-| **`onDeviceLevel`**             | `(level?: DeviceLevel) => void`        | Callback que envia os dados referente ao nível do device com base no acelerômetro.                      |
-| **`onChangeFrontalValidation`** | `(frontalValidation: boolean) => void` | Callback chamado quando a validação frontal muda.                                                       |
-| **`settings`**                  | `Settings`                             | Configurações para controle da câmera e detecção de poses.                                              |
+| Propriedade                     | Tipo                                   | Descrição                                                                                                                                 |
+| ------------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| **`onImagesCaptured`**          | `(images?: ImagesCaptured) => void`    | Callback chamado quando imagens são capturadas. Essas são as imagens que devem ser enviadas para a API.                                   |
+| **`onErrorsPose`**              | `(errors: string[]) => void`           | Callback chamado quando erros ocorrem durante a captura da pose.                                                                          |
+| **`onCountdown`**               | `(countdown: number \| null) => void`  | Callback chamado quando é iniciado o countdown para a captura da imagem.                                                                  |
+| **`onDeviceLevel`**             | `(level?: DeviceLevel) => void`        | Callback que envia os dados referente ao nível do device com base no acelerômetro.                                                        |
+| **`onChangeFrontalValidation`** | `(frontalValidation: boolean) => void` | Callback chamado quando a validação frontal muda.                                                                                         |
+| **`settings`**                  | `Settings`                             | Configurações para controle da câmera e detecção de poses.                                                                                |
+| **`language`**                  | `string?`                              | Idioma a ser usado pelo módulo nativo (ex: `"pt-BR"`, `"pt"`, `"en-US"`, `"en"`, `"es-ES"`, `"es"`, `"pt-PT"`). Te como default `"pt-BR"` |
 
 ## Lista de Erros Possíveis
 

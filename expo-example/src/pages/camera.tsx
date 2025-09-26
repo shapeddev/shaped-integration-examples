@@ -5,6 +5,7 @@ import type { DeviceLevel } from "@shapeddev/shaped-expo-plugin";
 import LevelChart from "../components/LevelChart";
 import { useNavigation } from "@react-navigation/native";
 import { RootStackProp } from "../router";
+import { useTranslation } from "react-i18next";
 
 const Camera = () => {
   const [poseErrors, setPoseErrors] = useState<string[]>([]);
@@ -13,25 +14,26 @@ const Camera = () => {
   const [frontalValidation, setFrontalValidation] = useState(true);
 
   const navigation = useNavigation<RootStackProp>();
+  const { t, i18n } = useTranslation();
 
   const errorMessages: Record<string, string> = {
-    faceNotDetected: "Caminhe para trás, enquadrando o corpo inteiro",
-    leftHandNotDetected: "Mão esquerda não está aparecendo na imagem",
-    rightHandNotDetected: "Mão direita não está aparecendo na imagem",
-    leftFootNotDetected: "Pé esquerdo não está aparecendo na imagem",
-    rightFootNotDetected: "Pé direito não está aparecendo na imagem",
-    angleNotDetected: "Ajuste sua postura",
-    armsBelow: "Levante os braços",
-    armsTop: "Abaixe os braços",
-    legsOpen: "Aproxime as pernas",
-    legsClosed: "Afaste as pernas",
-    rightArmTop: "Abaixe o braço direito",
-    rightArmBelow: "Levante o braço direito",
-    leftArmTop: "Abaixe o braço esquerdo",
-    leftArmBelow: "Levante o braço esquerdo",
-    verifyVolumeSetting: "Por favor verifique o volume do dispositivo",
-    personIsFar: "Aproxime-se da câmera",
-    deviceLevelInvalid: "Afaste o ângulo do seu device",
+    faceNotDetected: t("camera.errors.faceNotDetected"),
+    leftHandNotDetected: t("camera.errors.leftHandNotDetected"),
+    rightHandNotDetected: t("camera.errors.rightHandNotDetected"),
+    leftFootNotDetected: t("camera.errors.leftFootNotDetected"),
+    rightFootNotDetected: t("camera.errors.rightFootNotDetected"),
+    angleNotDetected: t("camera.errors.angleNotDetected"),
+    armsBelow: t("camera.errors.armsBelow"),
+    armsTop: t("camera.errors.armsTop"),
+    legsOpen: t("camera.errors.legsOpen"),
+    legsClosed: t("camera.errors.legsClosed"),
+    rightArmTop: t("camera.errors.rightArmTop"),
+    rightArmBelow: t("camera.errors.rightArmBelow"),
+    leftArmTop: t("camera.errors.leftArmTop"),
+    leftArmBelow: t("camera.errors.leftArmBelow"),
+    verifyVolumeSetting: t("camera.errors.verifyVolumeSetting"),
+    personIsFar: t("camera.errors.personIsFar"),
+    deviceLevelInvalid: t("camera.errors.deviceLevelInvalid"),
   };
 
   const getErrorMessage = (errors: string[]): string | null => {
@@ -52,7 +54,7 @@ const Camera = () => {
         />
         <View style={styles.header}>
           <Text style={styles.title}>
-            {frontalValidation ? "Pose Frontal" : "Pose Lateral"}
+            {frontalValidation ? t("camera.poseFront") : t("camera.poseSide")}
           </Text>
           {countdownValue !== null && Number(countdownValue) > 0 && (
             <Text style={styles.count}>{countdownValue}</Text>
@@ -76,6 +78,7 @@ const Camera = () => {
             onErrorsPose={(errors) => {
               setPoseErrors(errors);
             }}
+            language={i18n.language}
           />
         </View>
       </>
