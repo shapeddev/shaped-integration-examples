@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
     width: 300,
     height: 400,
     marginHorizontal: 10,
+    objectFit: "contain",
   },
   button: {
     backgroundColor: "#6BECFF",

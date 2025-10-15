@@ -225,8 +225,10 @@ const errorKeys = [
   'leftArmTop',// Abaixe o braço esquerdo
   'leftArmBelow',// Levante o braço direito
   'verifyVolumeSetting',// Por favor verifique o volume do dispositivo (Mensagem somente de aviso não é um erro)
-  'personIsFar'// Aproxime-se da câmera,
+  'personIsFar',// Aproxime-se da câmera
   'deviceLevelInvalid',// Afaste o ângulo do seu device
+  'approachLegsOnSide',// Aproxime as pernas mantendo a esquerda não visível
+  'leftHandTopRightHandBelow',// Abaixe o braço esquerdo e levante o braço direito
 ] as const;
 ```
 
