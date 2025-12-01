@@ -15,7 +15,7 @@ Após a criação do projeto, siga a [documentação oficial do Expo](https://do
 Para garantir compatibilidade, utilize o seguinte comando para instalar as versões recomendadas:
 
 ```sh
-npx expo install expo@~52.0.37 react@18.3.1 react-native@0.76.7
+npx expo install expo@~53.0.24 react@19.0.0 react-native@0.79.6
 ```
 
 ---
@@ -27,7 +27,7 @@ npx expo install expo@~52.0.37 react@18.3.1 react-native@0.76.7
 Este plugin depende das bibliotecas **@shopify/react-native-skia** e **react-native-reanimated**. Para instalá-las corretamente, utilize:
 
 ```sh
-npx expo install @shopify/react-native-skia@1.11.7 react-native-reanimated
+npx expo install @shopify/react-native-skia@2.0.0-next.4 react-native-reanimated
 ```
 
 OBS: Se acontecer algum erro referente ao react-native-reanimated seja o [manual do pacote.](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
