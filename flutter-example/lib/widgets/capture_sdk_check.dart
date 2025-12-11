@@ -20,7 +20,7 @@ class CaptureSdkCheckState extends ConsumerState<CaptureSdkCheck> {
     return showFrontalConfirm
         ? Center(
             child: Container(
-              width: ImageSize.getWithFromImage(imageSize.width, context),
+              width: ImageSize.getWidthFromImage(imageSize.width, context),
               height: ImageSize.getHeightFromImage(
                 imageSize.width,
                 imageSize.height,
@@ -36,6 +36,6 @@ class CaptureSdkCheckState extends ConsumerState<CaptureSdkCheck> {
               ),
             ),
           )
-        : SizedBox();
+        : const SizedBox();
   }
 }

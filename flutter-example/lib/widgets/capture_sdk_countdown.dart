@@ -35,6 +35,6 @@ class CaptureSdkCountdownState extends ConsumerState<CaptureSdkCountdown> {
               ),
             ),
           )
-        : SizedBox();
+        : const SizedBox();
   }
 }

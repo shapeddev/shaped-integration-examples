@@ -14,7 +14,7 @@ Map<String, String> setErrorMessages() {
     "leftFootNotDetected": "Pé esquerdo não está aparecendo na imagem",
     "rightFootNotDetected": "Pé direito não está aparecendo na imagem",
     "angleNotDetected": "Ajuste sua postura",
-    "armsBelow": "Levente os braços",
+    "armsBelow": "Levante os braços",
     "armsTop": "Abaixe os braços",
     "legsOpen": "Aproxime as pernas",
     "legsClosed": "Afaste as pernas",
@@ -77,7 +77,7 @@ class CaptureSdkErrorsState extends ConsumerState<CaptureSdkErrors> {
                 ),
               ),
             )
-          : SizedBox(height: 96),
+          : const SizedBox(height: 96),
     );
   }
 }

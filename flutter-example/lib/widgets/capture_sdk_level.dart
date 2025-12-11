@@ -23,7 +23,7 @@ class CaptureSdkLevelState extends ConsumerState<CaptureSdkLevel> {
     return !isLevelRight
         ? Center(
             child: Container(
-              width: ImageSize.getWithFromImage(imageSize.width, context),
+              width: ImageSize.getWidthFromImage(imageSize.width, context),
               height: ImageSize.getHeightFromImage(
                 imageSize.width,
                 imageSize.height,
@@ -115,6 +115,6 @@ class CaptureSdkLevelState extends ConsumerState<CaptureSdkLevel> {
               ),
             ),
           )
-        : SizedBox();
+        : const SizedBox();
   }
 }

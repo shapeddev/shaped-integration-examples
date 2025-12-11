@@ -51,7 +51,7 @@ class CoreConfirmationScreenState
           children: [
             SizedBox(height: 24),
             Text(
-              'Confirmar Images Capturadas',
+              'Confirmar Imagens Capturadas',
               style: Theme.of(context).textTheme.titleLarge,
             ),
             SizedBox(height: 24),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 class ImageSize {
-  static double getWithFromImage(double width, BuildContext context) {
-    final screenWitdh = MediaQuery.of(context).size.width - 24;
-    return width < screenWitdh ? width : screenWitdh;
+  static double getWidthFromImage(double width, BuildContext context) {
+    final screenWidth = MediaQuery.of(context).size.width - 24;
+    return width < screenWidth ? width : screenWidth;
   }
 
   static double getHeightFromImage(
@@ -11,9 +11,9 @@ class ImageSize {
     double height,
     BuildContext context,
   ) {
-    final screenWitdh = MediaQuery.of(context).size.width - 24;
-    final imageWithDiffPercent = ((screenWitdh * 100) / width) / 100;
-    final containerHeight = height * imageWithDiffPercent;
-    return width < screenWitdh ? height : containerHeight;
+    final screenWidth = MediaQuery.of(context).size.width - 24;
+    final imageWidthDiffPercent = ((screenWidth * 100) / width) / 100;
+    final containerHeight = height * imageWidthDiffPercent;
+    return width < screenWidth ? height : containerHeight;
   }
 }
