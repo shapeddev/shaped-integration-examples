@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { View, Text, StyleSheet, SafeAreaView } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
+import { SafeAreaView } from "react-native-safe-area-context";
 import { ShapedPluginCamera } from "@shapeddev/shaped-expo-plugin";
 import type { DeviceLevel } from "@shapeddev/shaped-expo-plugin";
 import LevelChart from "../components/LevelChart";
@@ -44,49 +45,43 @@ const Camera = () => {
     return null;
   };
 
-  const renderContent = () => {
-    return (
-      <>
-        <LevelChart
-          isValid={deviceLevel?.isValid}
-          offsetX={deviceLevel?.x}
-          offsetY={deviceLevel?.y}
-        />
-        <View style={styles.header}>
-          <Text style={styles.title}>
-            {frontalValidation ? t("camera.poseFront") : t("camera.poseSide")}
-          </Text>
-          {countdownValue !== null && Number(countdownValue) > 0 && (
-            <Text style={styles.count}>{countdownValue}</Text>
-          )}
-          <Text style={styles.titleErrors}>
-            {getErrorMessage(poseErrors) || ""}
-          </Text>
-        </View>
-        <View style={styles.cameraContainer}>
-          <ShapedPluginCamera
-            onCountdown={(countdown) => {
-              setCountdownValue(countdown);
-            }}
-            onDeviceLevel={setDeviceLevel}
-            onChangeFrontalValidation={setFrontalValidation}
-            onImagesCaptured={(values) => {
-              navigation.replace("Images", {
-                images: values,
-              });
-            }}
-            onErrorsPose={(errors) => {
-              setPoseErrors(errors);
-            }}
-            language={i18n.language}
-          />
-        </View>
-      </>
-    );
-  };
-
   return (
-    <SafeAreaView style={styles.safeContainer}>{renderContent()}</SafeAreaView>
+    <SafeAreaView style={styles.safeContainer}>
+      <LevelChart
+        isValid={deviceLevel?.isValid}
+        offsetX={deviceLevel?.x}
+        offsetY={deviceLevel?.y}
+      />
+      <View style={styles.header}>
+        <Text style={styles.title}>
+          {frontalValidation ? t("camera.poseFront") : t("camera.poseSide")}
+        </Text>
+        {countdownValue !== null && Number(countdownValue) > 0 && (
+          <Text style={styles.count}>{countdownValue}</Text>
+        )}
+        <Text style={styles.titleErrors}>
+          {getErrorMessage(poseErrors) || ""}
+        </Text>
+      </View>
+      <View style={styles.cameraContainer}>
+        <ShapedPluginCamera
+          onCountdown={(countdown) => {
+            setCountdownValue(countdown);
+          }}
+          onDeviceLevel={setDeviceLevel}
+          onChangeFrontalValidation={setFrontalValidation}
+          onImagesCaptured={(values) => {
+            navigation.replace("Images", {
+              images: values,
+            });
+          }}
+          onErrorsPose={(errors) => {
+            setPoseErrors(errors);
+          }}
+          language={i18n.language}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
