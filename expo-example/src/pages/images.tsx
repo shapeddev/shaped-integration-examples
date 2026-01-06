@@ -1,6 +1,5 @@
 import {
   StyleSheet,
-  SafeAreaView,
   ScrollView,
   Image,
   TouchableOpacity,
@@ -9,6 +8,7 @@ import {
 import { RouteProp, useNavigation, useRoute } from "@react-navigation/native";
 import { RootStackParamList } from "../router";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type NavigationProps = NativeStackNavigationProp<RootStackParamList, "Images">;
 
