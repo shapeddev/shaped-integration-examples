@@ -1,6 +1,6 @@
-# Documentação Lógica de Referências BIA
+# BIA References Logic Documentation
 
-## 1. Payload de exemplo
+## 1. Example payload
 
 ```json
 {
@@ -34,24 +34,24 @@
 }
 ```
 
-Campos relevantes:
+Relevant fields:
 
-| Campo do payload | Papel |
+| Payload field | Role |
 |---|---|
-| `sex` | Precisa ser normalizado para `"F"`/`"M"`. Define o ramo de cada tabela. |
-| `age` | Usado diretamente como `idade`. |
+| `sex` | Must be normalized to `"F"`/`"M"`. Defines the branch of each table. |
+| `age` | Used directly as `age`. |
 
-Todos os demais campos (`process_id`, `status`, `error`, `duration_seconds`,
+All other fields (`process_id`, `status`, `error`, `duration_seconds`,
 `webhook_url`, `metadata`, `weight_kg`, `height_cm`, `biceps`, `forearm`,
 `waist`, `hip`, `thigh`, `calf`, `waist_height`, `waist_hip`, `ic_index`,
 `bia`, `dxa`, `fat_mass_bia`, `fat_mass_index_bia`, `lean_mass_bia`,
-`lean_mass_index_bia`, `water_bia`, `tmb_bia`) **não são usados** para montar
-as faixas. São os valores medidos que, depois, seriam comparados contra as
-faixas geradas.
+`lean_mass_index_bia`, `water_bia`, `tmb_bia`) **are not used** to build the
+ranges. They are the measured values that would later be compared against
+the generated ranges.
 
-## 2. Estrutura de saída
+## 2. Output structure
 
-A saída tem sempre as mesmas 8 chaves, cada uma com um dicionário de faixas
+The output always has the same 8 keys, each holding a dictionary of ranges
 `{"min": ..., "max": ...}`:
 
 ```
@@ -67,11 +67,11 @@ A saída tem sempre as mesmas 8 chaves, cada uma com um dicionário de faixas
 }
 ```
 
-## 3. Tabelas de regras BIA
+## 3. BIA rule tables
 
-### 3.1 **`fat_percentage_references`** (por sexo + faixa de idade):
+### 3.1 **`fat_percentage_references`** (by sex + age range):
 
-| Sexo | Idade | attention | low_risk | moderate | high_risk |
+| Sex | Age | attention | low_risk | moderate | high_risk |
 |---|---|---|---|---|---|
 | F | ≤24 | 12–19 | 19–26.3 | 26.3–29.7 | 29.7–40 |
 | F | 24–34 | 11–17.7 | 17.7–26.5 | 26.5–29.8 | 29.8–40 |
@@ -84,9 +84,9 @@ A saída tem sempre as mesmas 8 chaves, cada uma com um dicionário de faixas
 | M | 44–54 | 5–11.8 | 11.8–20.3 | 20.3–23.8 | 23.8–32 |
 | M | >54 | 6–12 | 12–22.8 | 22.8–26.4 | 26.4–34 |
 
-### 3.2 **`fat_mass_index_references`** (por sexo + faixa de idade):
+### 3.2 **`fat_mass_index_references`** (by sex + age range):
 
-| Sexo | Idade | low | appropriate | high |
+| Sex | Age | low | appropriate | high |
 |---|---|---|---|---|
 | F | ≤34 | 1.1–3.5 | 3.5–5.9 | 5.9–8.3 |
 | F | 34–54 | 0.3–3.4 | 3.4–6.5 | 6.5–9.6 |
@@ -95,9 +95,9 @@ A saída tem sempre as mesmas 8 chaves, cada uma com um dicionário de faixas
 | M | 34–54 | 0–2.5 | 2.5–5 | 5–7.5 |
 | M | >54 | 0–2.8 | 2.8–5.7 | 5.7–8.6 |
 
-### 3.3 **`lean_mass_index_references`** (por sexo + faixa de idade):
+### 3.3 **`lean_mass_index_references`** (by sex + age range):
 
-| Sexo | Idade | low | appropriate | high |
+| Sex | Age | low | appropriate | high |
 |---|---|---|---|---|
 | F | ≤29 | 11–14 | 14–17 | 17–20 |
 | F | 29–39 | 10.6–14.1 | 14.1–17.6 | 17.6–21.1 |
@@ -110,41 +110,41 @@ A saída tem sempre as mesmas 8 chaves, cada uma com um dicionário de faixas
 | M | 49–59 | 13.6–17.2 | 17.2–20.8 | 20.8–24.4 |
 | M | >59 | 14.2–17.3 | 17.3–20.4 | 20.4–23.5 |
 
-### 3.4 **`waist_references`** (por sexo):
+### 3.4 **`waist_references`** (by sex):
 
-| Sexo | low_risk | moderate | high_risk |
+| Sex | low_risk | moderate | high_risk |
 |---|---|---|---|
 | F | 66–80 | 80–88 | 88–104 |
 | M | 70–94 | 94–102 | 102–118 |
 
-### 3.5 **`hip_references`** (por sexo):
+### 3.5 **`hip_references`** (by sex):
 
-| Sexo | attention | low_risk | moderate | high_risk |
+| Sex | attention | low_risk | moderate | high_risk |
 |---|---|---|---|---|
 | F | 92.5–97.6 | 97.6–107.7 | 107.7–112.8 | 112.8–123 |
 | M | 93.3–97.2 | 97.2–104.8 | 104.8–108.6 | 108.6–116.2 |
 
-### 3.6 **`cardiovascular_risk_references`** (Fixo, não depende de sexo/idade):
+### 3.6 **`cardiovascular_risk_references`** (Fixed, does not depend on sex/age):
 
 | low_risk | moderate | high_risk |
 |---|---|---|
 | 0.4–0.5 | 0.5–0.55 | 0.55–0.7 |
 
-### 3.7 **`waist_hip_references`** (por sexo):
+### 3.7 **`waist_hip_references`** (by sex):
 
-| Sexo | adequate | inappropriate |
+| Sex | adequate | inappropriate |
 |---|---|---|
 | F | 0.65–0.85 | 0.85–1 |
 | M | 0.7–0.9 | 0.9–1.15 |
 
-### 3.8 **`ic_index_references`** (por sexo):
+### 3.8 **`ic_index_references`** (by sex):
 
-| Sexo | adequate | inappropriate |
+| Sex | adequate | inappropriate |
 |---|---|---|
 | F | 0.7–1.18 | 1.18–1.4 |
 | M | 0.7–1.25 | 1.25–1.4 |
 
-## 4. Implementações de Referência
+## 4. Reference implementations
 
 ### 4.1 Python
 
@@ -279,7 +279,7 @@ def _ic_index_references(sex: Sex) -> dict:
     return {"adequate": {"min": 0.7, "max": 1.25}, "inappropriate": {"min": 1.25, "max": 1.4}}
 
 
-# ---------- Exemplo de uso com o payload fornecido ----------
+# ---------- Example usage with the provided payload ----------
 
 def normalize_sex(raw_sex: str) -> Sex:
     return "F" if raw_sex.strip().lower().startswith("f") else "M"
@@ -384,7 +384,7 @@ function icIndexReferences(sex: Sex): Record<string, Band> {
   return { adequate: { min: 0.7, max: 1.25 }, inappropriate: { min: 1.25, max: 1.4 } };
 }
 
-// ---------- Exemplo de uso com o payload fornecido ----------
+// ---------- Example usage with the provided payload ----------
 
 interface AiPayload {
   sex: string;
@@ -401,7 +401,7 @@ const references = getTablesReferences(normalizeSex(payload.sex), payload.age);
 console.log(references);
 ```
 
-### 4.3 JavaScript (Node / navegador)
+### 4.3 JavaScript (Node / browser)
 
 ```javascript
 function getTablesReferences(sex, age) {
@@ -476,7 +476,7 @@ function icIndexReferences(sex) {
   return { adequate: { min: 0.7, max: 1.25 }, inappropriate: { min: 1.25, max: 1.4 } };
 }
 
-// ---------- Exemplo de uso com o payload fornecido ----------
+// ---------- Example usage with the provided payload ----------
 
 function normalizeSex(rawSex) {
   return rawSex.trim().toLowerCase().startsWith("f") ? "F" : "M";
@@ -488,10 +488,10 @@ const references = getTablesReferences(normalizeSex(payload.sex), payload.age);
 console.log(references);
 ```
 
-## 5. Saída esperada para o payload de exemplo
+## 5. Expected output for the example payload
 
-Com `sex = "male"` → `"M"` e `age = 30`, a saída das três implementações
-acima é:
+With `sex = "male"` → `"M"` and `age = 30`, the output of the three
+implementations above is:
 
 ```json
 {
