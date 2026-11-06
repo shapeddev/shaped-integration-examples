@@ -15,8 +15,34 @@ Após a criação do projeto, siga a [documentação oficial do Expo](https://do
 Para garantir compatibilidade, utilize o seguinte comando para instalar as versões recomendadas:
 
 ```sh
-npx expo install expo@^54.0.30 react@19.1.0 react-native@0.81.5
+npx expo install expo@^58.0.23 react@19.3.0 react-native@0.88.1
 ```
+
+### Versões compatíveis
+
+A partir da versão **0.2.1**, o plugin requer o **Expo SDK 58**.
+
+| Item                                 | Versão         |
+| ------------------------------------ | -------------- |
+| Expo SDK                             | 58             |
+| React Native                         | 0.88.1         |
+| React                                | 19.3.0         |
+| iOS mínimo                           | 16.4           |
+| Android `minSdk`                     | 24             |
+| Android `compileSdk`                 | 37             |
+| Android `targetSdk`                  | 36             |
+| Gradle                               | 9.4.1          |
+| Android Build-Tools                  | 37.0.0         |
+| Android NDK                          | 27.1.12297006  |
+| Kotlin                               | 2.2.10         |
+
+Se estiver atualizando um projeto de um SDK anterior, gere novamente as pastas nativas depois de atualizar as dependências:
+
+```sh
+npx expo prebuild --clean
+```
+
+> ⚠️ O `--clean` apaga as pastas `android` e `ios`. Salve antes qualquer alteração manual feita nelas.
 
 ---
 
@@ -24,10 +50,10 @@ npx expo install expo@^54.0.30 react@19.1.0 react-native@0.81.5
 
 ### 1. Instalar Dependências Adicionais
 
-Este plugin depende das bibliotecas **@shopify/react-native-skia** e **react-native-reanimated**. Para instalá-las corretamente, utilize:
+Este plugin depende das bibliotecas **@shopify/react-native-skia**, **expo-camera**, **expo-file-system** e **react-native-reanimated**. Para instalá-las corretamente, utilize:
 
 ```sh
-npx expo install @shopify/react-native-skia@2.2.12 react-native-reanimated
+npx expo install @shopify/react-native-skia@2.14.0 expo-camera expo-file-system react-native-reanimated
 ```
 
 OBS: Se acontecer algum erro referente ao react-native-reanimated seja o [manual do pacote.](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/getting-started/)
@@ -52,7 +78,7 @@ Para que o plugin funcione corretamente no Android e iOS, adicione as configura�
         "expo-build-properties",
         {
           "ios": {
-            "deploymentTarget": "15.5"
+            "deploymentTarget": "16.4"
           }
         }
       ],
@@ -61,8 +87,6 @@ Para que o plugin funcione corretamente no Android e iOS, adicione as configura�
         {
           "gitUsernameEnvName": "GITHUB_USER",
           "gitTokenEnvName": "GITHUB_TOKEN",
-          "gitUsername": "SEU_USERNAME",
-          "gitToken": "SEU_TOKEN",
           "useSimulator": false
         }
       ]
@@ -99,9 +123,23 @@ Para que o plugin funcione corretamente no Android e iOS, adicione as configura�
 Para que o Android consiga acessar os pacotes hospedados no GitHub Packages, é necessário fornecer as credenciais de acesso via variáveis de ambiente ou diretamente no `app.json` ou `app.config.js`, conforme explicado acima, além disso a versão mínima do IOS é a **15.5** igual especificamos no `app.json` de exemplo.
 
 - `gitUsernameEnvName` e `gitTokenEnvName` informam o nome das variáveis de ambiente utilizadas durante o build (por exemplo, no EAS Build).
-- `gitUsername` e `gitToken` são utilizados para se autenticar nos repositorios privados dos pacotes do nosso plugin.
+- `gitUsername` e `gitToken` são opcionais e, quando informados, têm prioridade sobre as variáveis de ambiente. Os valores ficam gravados no `app.json` e no `build.gradle`, então prefira as variáveis de ambiente e nunca faça commit de um token.
 
 Essas credenciais são usadas para configurar o repositório Maven privado no `build.gradle` do Android.
+
+Para uso local, crie um arquivo `.env.local` na raiz do projeto e mantenha esse arquivo no `.gitignore`:
+
+```ini
+GITHUB_USER=seu_usuario
+GITHUB_TOKEN=seu_token
+NODE_AUTH_TOKEN=seu_token
+```
+
+O Expo CLI carrega esse arquivo automaticamente nos comandos `npx expo`. Para rodar `npm install` ou `pod install` diretamente, carregue as variáveis antes:
+
+```sh
+set -a; source .env.local; set +a
+```
 
 **Para o IOS é preciso exportar a variável `GITHUB_TOKEN`, com o mesmo token que usou acima.**
 
@@ -159,6 +197,20 @@ npx expo run:ios
 # ou
 npx expo run:android
 ```
+
+Para rodar em um dispositivo físico, adicione `--device`:
+
+```sh
+npx expo run:ios --device
+# ou
+npx expo run:android --device
+```
+
+### Problemas comuns
+
+- **`Minimum supported Gradle version is 9.4.1`**: a pasta `android` foi gerada por um SDK anterior. Rode `npx expo prebuild --clean`.
+- **`Cannot find module 'babel-preset-expo'`**: o projeto tem um `babel.config.js` que usa esse preset, mas o pacote não está na raiz do `node_modules`. Rode `npx expo install babel-preset-expo -- --save-dev`.
+- **`This function has a reified type parameter`** ao abrir o app no Android: a versão do plugin é anterior à 0.2.1. Atualize o plugin e recompile o app.
 
 ---
 
