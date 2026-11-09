@@ -31,7 +31,7 @@
         "expo-build-properties",
         {
           "ios": {
-            "deploymentTarget": "15.5"
+            "deploymentTarget": "16.4"
           }
         }
       ],
@@ -42,7 +42,7 @@
           "gitTokenEnvName": "GITHUB_TOKEN",
           "gitUsername": "",
           "gitToken": "",
-          "useSimulator": true
+          "useSimulator": false
         }
       ]
     ]
